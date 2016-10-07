@@ -1,0 +1,24 @@
+Week 1 Lab: Using Linux Fedora
+Tutorial 1.
+
+In this first tutorial we want to increase the number of CPUs which are allocated to our Fedora VM:
+
+1. Start VirtualBox and go to the settings of your VM
+2. Under System, choose the processor tab
+3. Increase the number of processors to 2
+4. Now boot the VM
+
+--its not immediately clear how many processors the VM now has (top doesn't show this clearly). Lets take a look.
+
+1. Open a X terminal session - we are going to issue some linux commands to find out how many cores we now have.
+2. The file of interest to us is the /proc/cpuinfo file. How do we view this file?
+3. Use the man page examine the more command
+4. Now use the more command to examine the contents of /proc/cpuinfo
+5. This file may still be hard to read. We are really interested in seeing how many "processor" strings appear in the file (ie, one per core)
+6. So we search the file: The string search routing in Linux is grep. Check the man page for this. 
+7. We need to send the results of the grep command to be "counted" by another command. This counting command is called wc. Check the man page for this command.
+8. Now, we need to combine the command from 6. and 7. using the unix pipe command: http://www.december.com/unix/tutor/pipesfilters.html
+9. Does this output look correct? If not, check the man page for wc (and look for a way to get wc to count the number of lines it read)
+
+
+more /proc/cpuinfo | grep processor | wc -l

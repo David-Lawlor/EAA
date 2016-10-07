@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+echo $1
+
+echo $2
+
+echo $3
+
+echo "Is this correct?"
+
+read -p "Press any key to continue... "
+#if [ ! -d '~/Backup$(date "+%Y.%m.%d-%H.%M.%S")']; then
+#	mkdir ~/Backup$(date "+%Y.%m.%d-%H.%M.%S")
+#fi
+
+#cp ~/$4 ~/Backup
+
+
